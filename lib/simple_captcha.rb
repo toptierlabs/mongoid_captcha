@@ -16,11 +16,12 @@ module SimpleCaptcha
 
   autoload :ModelHelpers,      'simple_captcha/model_helpers'
 
-  if defined?(ActiveRecord)
-    autoload :SimpleCaptchaData, 'simple_captcha/simple_captcha_data'
-  else
-    autoload :SimpleCaptchaData,      'simple_captcha/simple_captcha_data_mongoid.rb'
-  end
+  #if defined?(ActiveRecord)
+  autoload :ModelHelpers,      'simple_captcha/active_record'
+  #  autoload :SimpleCaptchaData, 'simple_captcha/simple_captcha_data'
+  #else
+  autoload :SimpleCaptchaData,      'simple_captcha/simple_captcha_data_mongoid.rb'
+  #end
 
 
   autoload :Middleware,        'simple_captcha/middleware'
